@@ -1,6 +1,7 @@
 package com.example.todolist
 
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -19,5 +20,12 @@ class MainActivity : AppCompatActivity() {
             mutableListOf()
         )
         lv.adapter = adapter
+        btnAdd.setOnClickListener{
+            AlertDialog.Builder(this)
+                .setTitle("項目の追加")
+                .setPositiveButton("追加", null)
+                .setNegativeButton("キャンセル",null)
+                .show()
+        }
     }
 }
