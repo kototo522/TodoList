@@ -5,6 +5,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ListView
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +22,11 @@ class MainActivity : AppCompatActivity() {
         )
         lv.adapter = adapter
         btnAdd.setOnClickListener{
+            val et = EditText(this)
+
             AlertDialog.Builder(this)
                 .setTitle("項目の追加")
+                .setView(et)
                 .setPositiveButton("追加", null)
                 .setNegativeButton("キャンセル",null)
                 .show()
